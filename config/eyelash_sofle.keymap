@@ -42,7 +42,7 @@
         acentoA: spanish {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(KP_NUMBER_0) &kp LA(KP_NUMBER_1) &kp LA(KP_NUMBER_9) &kp LA(KP_NUMBER_3)>;
+            bindings = <&kp LA(KP_N0) &kp LA(KP_N1) &kp LA(KP_N9) &kp LA(KP_N3)>;
             label = "SPANISH";
         };
 
