@@ -42,98 +42,98 @@
         acentoA: spanish {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N0 &kp N1 &kp N9 &kp N3>;
+            bindings = <&kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_9) &kp LC(KP_NUMBER_3)>;
             label = "SPANISH";
         };
 
         acentoMinA: acentoMinA {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp NUMBER_0>;
+            bindings = <&kp KP_NUMBER_1 &kp KP_NUMBER_6 &kp KP_NUMBER_0>;
             label = "ACENTOMINA";
         };
 
         acentoE: acentoE {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N0 &kp N2 &kp N0 &kp N1>;
+            bindings = <&kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_2) &kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_1)>;
             label = "ACENTOE";
         };
 
         acentoMinE: acentoMinE {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N3 &kp N0>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_3) &kp LC(KP_NUMBER_0)>;
             label = "ACENTOMINE";
         };
 
         acentoI: acentoI {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N0 &kp N2 &kp N0 &kp N5>;
+            bindings = <&kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_2) &kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_5)>;
             label = "ACENTOI";
         };
 
         acentoMinI: acentoMinI {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp N1>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_6) &kp LC(KP_NUMBER_1)>;
             label = "ACENTOMINI";
         };
 
         acentoO: acentoO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N0 &kp N2 &kp N1 &kp N1>;
+            bindings = <&kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_2) &kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_1)>;
             label = "ACENTOO";
         };
 
         acentoMinO: acentoMinO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp N2>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_6) &kp LC(KP_NUMBER_2)>;
             label = "ACENTOMINO";
         };
 
         acentoU: acentoU {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N0 &kp N2 &kp N1 &kp N8>;
+            bindings = <&kp LC(KP_NUMBER_0) &kp LC(KP_NUMBER_2) &kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_8)>;
             label = "ACENTOU";
         };
 
         acentoMinU: acentoMinU {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp N3>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_6) &kp LC(KP_NUMBER_3)>;
             label = "ACENTOMINU";
         };
 
         anio: anio {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp N4>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_6) &kp LC(KP_NUMBER_4)>;
             label = "ANIO";
         };
 
         anioMayus: anioMayus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp N5>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_6) &kp LC(KP_NUMBER_5)>;
             label = "ANIOMAYUS";
         };
 
         ExpresionPrincipio: ExpresionPrincipio {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N7 &kp N3>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_7) &kp LC(KP_NUMBER_3)>;
             label = "EXPRESIONPRINCIPIO";
         };
 
         preguntaPrincipio: preguntaPrincipio {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp N1 &kp N6 &kp N8>;
+            bindings = <&kp LC(KP_NUMBER_1) &kp LC(KP_NUMBER_6) &kp LC(KP_NUMBER_8)>;
             label = "PREGUNTAPRINCIPIO";
         };
     };
