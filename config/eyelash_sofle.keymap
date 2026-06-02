@@ -87,7 +87,7 @@
 &trans          &trans           &trans          &trans           &trans           &trans          &mmv MOVE_DOWN   &kp GRAVE     &kp LEFT_BRACE        &kp DOUBLE_QUOTES  &kp RIGHT_BRACE        &kp EQUAL  &trans
 &trans          &trans           &trans          &trans           &trans           &trans          &mmv MOVE_LEFT   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp UNDERSCORE     &kp RIGHT_PARENTHESIS  &kp PLUS   &trans
 &trans          &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans          &mmv MOVE_RIGHT  &kp TILDE     &kp LESS_THAN         &kp MINUS          &kp GREATER_THAN       &trans     &trans
-&kp C_MUTE      &trans           &trans          &trans           &trans           &trans          &mkp LCLK        &trans        &trans                &trans             &trans                 &trans
+&trans          &trans           &trans          &trans           &trans           &trans          &mkp LCLK        &trans        &trans                &trans             &trans                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
