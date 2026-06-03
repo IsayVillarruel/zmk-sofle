@@ -37,6 +37,13 @@
     };
 
     behaviors {
+        caps_shift: caps_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>; // Tiempo que debes mantener presionado (en milisegundos)
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     combos {
