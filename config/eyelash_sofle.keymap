@@ -19,8 +19,6 @@
     delay-ms = <0>;                   // 0
 };
 
-&mt { tapping-term-ms = <1000>; };
-
 &mmv {
     time-to-max-speed-ms = <500>;
     acceleration-exponent = <1>;
