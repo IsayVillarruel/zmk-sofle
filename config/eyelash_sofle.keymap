@@ -99,7 +99,7 @@
 
         HR_LSignals {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans                &trans             &trans                 &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &kp LEFT_BRACKET      &trans             &kp RIGHT_BRACKET      &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp TILDE     &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp EQUAL  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp ASTERISK  &kp LEFT_BRACE        &kp UNDERSCORE     &kp RIGHT_BRACE        &kp PLUS   &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp TILDE     &kp LESS_THAN         &kp MINUS          &kp GREATER_THAN       &trans     &trans
