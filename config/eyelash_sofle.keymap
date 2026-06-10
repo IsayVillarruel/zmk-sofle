@@ -22,14 +22,14 @@
 &mmv {
     time-to-max-speed-ms = <500>;
     acceleration-exponent = <1>;
-    trigger-period-ms = ;
+    trigger-period-ms = <16>;
 };
 
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        bindings = <&msc SCRL_DOWN &msc SCRL_UP>; // Corregido: sin coma intermedia
 
         tap-ms = <100>;
     };
@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>; // Tiempo que debes mantener presionado (en milisegundos)
+            tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -47,10 +47,10 @@
         hrm: home_row_modifiers {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";         // Resuelve la superposición balanceando tap/hold
-            tapping-term-ms = <280>;     // Tiempo de espera base para el hold
-            quick-tap-ms = <175>;        // Permite repetir la letra al hacer doble tap rápido
-            require-prior-idle-ms = <150>; // Exige un tiempo de inactividad previo para activar el modificador
+            flavor = "balanced";         
+            tapping-term-ms = <280>;     
+            quick-tap-ms = <175>;        
+            require-prior-idle-ms = <150>; 
             bindings = <&kp>, <&kp>;
         };
     };
