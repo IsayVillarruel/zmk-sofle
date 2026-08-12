@@ -84,27 +84,29 @@
     keymap {
         compatible = "zmk,keymap";
 
-        OG_Keyboard_Windows {
-            display-name = "LAYER0";
+        Main {
+            label = "HRK";
+            display-name = "HR_K";
             bindings = <
-&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7           &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U            &kp I      &kp O    &kp P     &kp DELETE
-&kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J            &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_CONTROL
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 6   &kp ENTER    &tog 1           &kp SPACE  &kp RIGHT_SHIFT  &mo 2      &none    &mo 7
+&trans          &trans        &trans  &trans            &trans  &trans    &kp UP_ARROW     &trans     &trans          &trans     &trans   &trans    &trans
+&kp TAB         &kp Q         &kp W   &kp E             &kp R   &kp T     &kp DOWN_ARROW   &kp Y      &kp U           &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp CAPS        &kp A         &kp S   &kp D             &kp F   &kp G     &kp LEFT_ARROW   &kp H      &kp J           &kp K      &kp L    &kp SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z         &kp X   &kp C             &kp V   &kp B     &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_ALT
+&kp C_MUTE      &kp LEFT_WIN  &none   &kp LEFT_CONTROL  &mo 4   &mo 5     &tog 1           &kp SPACE  &kp LEFT_SHIFT  &mo 2      &none    &mo 7
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
-        OG_Keyboard_Mac {
-            display-name = "LAYER0";
+        Mac {
+            label = "HRK";
+            display-name = "HR_K";
             bindings = <
-&kp ESC     &kp N1        &kp N2  &kp N3            &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7           &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB     &kp Q         &kp W   &kp E             &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U            &kp I      &kp O    &kp P     &kp DELETE
-&kp CAPS    &kp A         &kp S   &kp D             &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J            &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT   &kp Z         &kp X   &kp C             &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_ALT
-&kp C_MUTE  &kp LEFT_WIN  &none   &kp LEFT_CONTROL  &mo 6   &kp ENTER    &tog 0           &kp SPACE  &kp RIGHT_SHIFT  &mo 3      &none    &mo 7
+&trans          &trans            &trans  &trans            &trans  &trans    &tog 1           &trans     &trans          &trans     &trans   &trans    &trans
+&kp TAB         &kp Q             &kp W   &kp E             &kp R   &kp T     &tog 0           &kp Y      &kp U           &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp CAPS        &kp A             &kp S   &kp D             &kp F   &kp G     &kp LEFT_ARROW   &kp H      &kp J           &kp K      &kp L    &kp SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z             &kp X   &kp C             &kp V   &kp B     &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_ALT
+&kp C_MUTE      &kp LEFT_CONTROL  &none   &kp LEFT_COMMAND  &mo 4   &mo 6     &tog 0           &kp SPACE  &kp LEFT_SHIFT  &mo 3      &none    &mo 7
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -112,11 +114,11 @@
 
         OG_LMovement_Windows {
             bindings = <
-&kp F1  &kp F2     &kp F3          &kp F4          &kp F5           &kp F6    &mmv MOVE_UP     &kp F7  &kp F8      &kp F9         &kp F10         &kp F11  &kp F12
-&trans  &trans     &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &trans    &mmv MOVE_DOWN   &trans  &kp INSERT  &kp DELETE     &msc SCRL_UP    &trans   &trans
-&trans  &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans    &mmv MOVE_LEFT   &trans  &kp HOME    &kp END        &msc SCRL_DOWN  &trans   &trans
-&trans  &kp LC(Z)  &kp LC(X)       &kp LC(C)       &kp LC(V)        &trans    &mmv MOVE_RIGHT  &trans  &kp PG_UP   &kp PAGE_DOWN  &trans          &trans   &trans
-&trans  &trans     &trans          &trans          &trans           &trans    &mkp LCLK        &trans  &trans      &trans         &trans          &trans
+&none   &none           &none           &none           &none            &none    &mmv MOVE_UP     &none  &none       &none          &none           &none  &none
+&none   &none           &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &none    &mmv MOVE_DOWN   &none  &kp INSERT  &kp DELETE     &msc SCRL_UP    &none  &trans
+&none   &kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &mmv MOVE_LEFT   &none  &kp HOME    &kp END        &msc SCRL_DOWN  &none  &trans
+&trans  &kp LC(Z)       &kp LC(X)       &kp LC(C)       &kp LC(V)        &none    &mmv MOVE_RIGHT  &none  &kp PG_UP   &kp PAGE_DOWN  &none           &none  &trans
+&none   &trans          &trans          &trans          &none            &none    &mkp LCLK        &none  &none       &trans         &none           &none
             >;
 
             display-name = "LAYER2";
@@ -126,94 +128,57 @@
         OG_LMovement_Mac {
             display-name = "LAYER2";
             bindings = <
-&kp F1  &kp F2     &kp F3          &kp F4          &kp F5           &kp F6    &mmv MOVE_UP     &kp F7  &kp F8      &kp F9         &kp F10         &kp F11  &kp F12
-&trans  &trans     &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &trans    &mmv MOVE_DOWN   &trans  &kp INSERT  &kp DELETE     &msc SCRL_UP    &trans   &trans
-&trans  &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans    &mmv MOVE_LEFT   &trans  &kp HOME    &kp END        &msc SCRL_DOWN  &trans   &trans
-&trans  &kp LG(Z)  &kp LG(X)       &kp LG(C)       &kp LG(V)        &trans    &mmv MOVE_RIGHT  &trans  &kp PG_UP   &kp PAGE_DOWN  &trans          &trans   &trans
-&trans  &trans     &trans          &trans          &trans           &trans    &mkp LCLK        &trans  &trans      &trans         &trans          &trans
+&none   &none           &none           &none           &none            &none     &mmv MOVE_UP     &none  &none       &none          &none           &none  &none
+&none   &none           &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &none     &mmv MOVE_DOWN   &none  &kp INSERT  &kp DELETE     &msc SCRL_UP    &none  &none
+&none   &kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none     &mmv MOVE_LEFT   &none  &kp HOME    &kp END        &msc SCRL_DOWN  &none  &none
+&trans  &kp LG(Z)       &kp LG(X)       &kp LG(C)       &kp LG(V)        &none     &mmv MOVE_RIGHT  &none  &kp PG_UP   &kp PAGE_DOWN  &none           &none  &trans
+&none   &trans          &trans          &trans          &trans           &trans    &mkp LCLK        &none  &none       &trans         &none           &none
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
-        Movement_Mac {
-            bindings = <
-&kp F1  &kp F2        &kp F3            &kp F4          &kp F5        &kp F6             &trans  &kp F7  &kp F8          &kp F9          &kp F10       &kp F11          &kp F12
-&trans  &trans        &kp LG(W)         &trans          &trans        &trans             &trans  &none   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-&trans  &kp LEFT_WIN  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp PRINTSCREEN    &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &kp LG(Z)     &kp LG(X)         &kp LG(C)       &kp LG(V)     &trans             &trans  &none   &kp HOME        &kp PAGE_DOWN   &kp PG_UP     &kp END          &trans
-&trans  &trans        &trans            &trans          &trans        &trans             &trans  &trans  &trans          &trans          &trans        &trans
-            >;
-        };
-
-        Movement_Windows {
-            bindings = <
-&kp F1  &kp F2        &kp F3        &kp F4          &kp F5            &kp F6             &trans  &kp F7  &kp F8          &kp F9          &kp F10       &kp F11          &kp F12
-&trans  &trans        &kp LC(W)     &trans          &trans            &trans             &trans  &none   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp PRINTSCREEN    &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &kp LC(Z)     &kp LC(X)     &kp LC(C)       &kp LC(V)         &trans             &trans  &none   &kp HOME        &kp PAGE_DOWN   &kp PG_UP     &kp END          &trans
-&trans  &trans        &trans        &trans          &trans            &trans             &trans  &trans  &trans          &trans          &trans        &trans
-            >;
-        };
-
         Signals {
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans            &trans                &trans             &trans                 &trans             &trans
-&trans  &trans  &trans  &trans  &trans         &kp GRAVE    &trans  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp EQUAL          &trans
-&trans  &trans  &trans  &trans  &kp PIPE       &kp ASTRK    &trans  &kp PLUS          &kp LEFT_BRACE        &kp UNDERSCORE     &kp RIGHT_BRACE        &kp COLON          &trans
-&trans  &trans  &trans  &trans  &kp BACKSLASH  &kp TILDE    &trans  &kp LEFT_BRACKET  &kp LESS_THAN         &kp MINUS          &kp GREATER_THAN       &kp RIGHT_BRACKET  &trans
-&trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans            &trans                &trans             &trans                 &trans
+&trans  &trans           &trans  &trans    &trans         &trans         &trans  &trans            &trans                &trans            &trans                 &trans             &trans
+&trans  &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR     &kp PERCENT    &trans  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp SINGLE_QUOTE  &kp RIGHT_PARENTHESIS  &kp EQUAL          &trans
+&trans  &trans           &trans  &trans    &kp PIPE       &kp CARET      &trans  &kp AMPS          &kp LEFT_BRACE        &kp UNDERSCORE    &kp RIGHT_BRACE        &kp PLUS           &kp GRAVE
+&trans  &trans           &trans  &trans    &kp BACKSLASH  &kp TILDE      &trans  &kp LEFT_BRACKET  &kp LESS_THAN         &kp MINUS         &kp GREATER_THAN       &kp RIGHT_BRACKET  &trans
+&trans  &trans           &trans  &trans    &trans         &trans         &trans  &trans            &trans                &trans            &trans                 &trans
+            >;
+        };
+
+        NumberWin {
+            bindings = <
+&none    &none  &none    &none   &none   &none     &none  &none  &none              &none          &none         &none       &none
+&kp ESC  &none  &kp F12  &kp F7  &kp F8  &kp F9    &none  &none  &kp NUMBER_7       &kp NUMBER_8   &kp N9        &none       &none
+&none    &none  &kp F11  &kp F4  &kp F5  &kp F6    &none  &none  &kp NUMBER_4       &kp NUMBER_5   &kp NUMBER_6  &kp N0      &none
+&none    &none  &kp F10  &kp F1  &kp F2  &kp F3    &none  &none  &kp NUMBER_1       &kp NUMBER_2   &kp NUMBER_3  &kp PERIOD  &none
+&none    &none  &none    &none   &none   &trans    &none  &none  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &none         &none
+            >;
+        };
+
+        NumberMac {
+            bindings = <
+&none    &none  &none    &none   &none   &none     &none  &none         &none             &none              &none         &none       &none
+&kp ESC  &none  &kp F12  &kp F7  &kp F8  &kp F9    &none  &none         &kp NUMBER_7      &kp NUMBER_8       &kp N9        &none       &none
+&none    &none  &kp F11  &kp F4  &kp F5  &kp F6    &none  &none         &kp NUMBER_4      &kp NUMBER_5       &kp NUMBER_6  &kp N0      &none
+&none    &none  &kp F10  &kp F1  &kp F2  &kp F3    &none  &none         &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3  &kp PERIOD  &none
+&none    &none  &none    &none   &none   &trans    &none  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp RIGHT_CONTROL  &none         &none
             >;
         };
 
         HR_LConfig {
             display-name = "LAYER1";
             bindings = <
-&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &mmv MOVE_UP     &none  &none  &none  &none  &none   &none
-&none           &none            &none           &none            &none            &none           &mmv MOVE_DOWN   &none  &none  &none  &none  &none   &none
+&none           &none            &none           &none            &none            &none           &mmv MOVE_UP     &none  &none  &none  &none  &none   &none
+&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &mmv MOVE_DOWN   &none  &none  &none  &none  &none   &none
 &none           &none            &none           &none            &none            &none           &mmv MOVE_LEFT   &none  &none  &none  &none  &none   &none
 &none           &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none           &mmv MOVE_RIGHT  &none  &none  &none  &none  &none   &none
 &trans          &none            &none           &none            &none            &none           &mkp LCLK        &none  &none  &none  &none  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-        };
-
-        Number {
-            bindings = <
-&trans  &trans           &trans        &trans        &trans        &trans         &trans  &trans        &trans             &trans         &trans        &trans   &trans
-&trans  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT    &trans  &kp CARET     &kp AMPERSAND      &kp BACKSLASH  &kp PIPE      &none    &trans
-&trans  &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5         &trans  &kp NUMBER_6  &kp N7             &kp N8         &kp NUMBER_9  &kp N0   &trans
-&kp F1  &kp F2           &kp F3        &kp F4        &kp F5        &kp F6         &trans  &kp F7        &kp F8             &kp F9         &kp F10       &kp F11  &kp F12
-&trans  &trans           &trans        &trans        &trans        &trans         &trans  &trans        &kp RIGHT_CONTROL  &kp RIGHT_ALT  &trans        &trans
-            >;
-        };
-
-        Main {
-            label = "HRK";
-            display-name = "HR_K";
-            bindings = <
-&trans      &trans  &trans        &trans  &trans  &trans              &kp UP_ARROW     &trans     &trans          &trans     &trans   &trans    &trans
-&kp ESC     &kp Q   &kp W         &kp E   &kp R   &kp T               &kp DOWN_ARROW   &kp Y      &kp U           &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp TAB     &kp A   &kp S         &kp D   &kp F   &kp G               &kp LEFT_ARROW   &kp H      &kp J           &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp CAPS    &kp Z   &kp X         &kp C   &kp V   &kp B               &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp LCTRL
-&kp C_MUTE  &trans  &kp LEFT_WIN  &mo 9   &mo 6   &kp LEFT_CONTROL    &tog 0           &kp SPACE  &kp LEFT_SHIFT  &mo 5      &none    &mo 7
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        OG_LBraces {
-            bindings = <
-&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &mmv MOVE_UP     &trans        &kp LEFT_BRACKET      &trans             &kp RIGHT_BRACKET      &trans     &trans
-&trans          &trans           &trans          &trans           &trans           &trans          &mmv MOVE_DOWN   &kp GRAVE     &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp EQUAL  &trans
-&trans          &trans           &trans          &trans           &trans           &trans          &mmv MOVE_LEFT   &kp ASTERISK  &kp LEFT_BRACE        &kp UNDERSCORE     &kp RIGHT_BRACE        &kp PLUS   &trans
-&trans          &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans          &mmv MOVE_RIGHT  &kp TILDE     &kp LESS_THAN         &kp MINUS          &kp GREATER_THAN       &trans     &trans
-&trans          &trans           &trans          &trans           &trans           &trans          &mkp LCLK        &trans        &trans                &trans             &trans                 &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "LAYER1";
         };
     };
 };
