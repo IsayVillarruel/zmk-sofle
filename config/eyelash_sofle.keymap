@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25    // 10
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -29,7 +29,7 @@
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN &msc SCRL_UP>; // Corregido: sin coma intermedia
+        bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
         tap-ms = <100>;
     };
 
@@ -41,8 +41,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
-
-        // Configuración para mitigar misclicks por deslizamiento (roll over)
 
         hrm: home_row_modifiers {
             compatible = "zmk,behavior-hold-tap";
@@ -84,111 +82,118 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // Capa 0: Windows Base (L0 en Vial)
         Main {
-            label = "HRK";
-            display-name = "HR_K";
+            label = "Main_Win";
+            display-name = "WIN";
             bindings = <
-&trans          &trans            &trans        &trans  &trans  &trans       &tog 1           &trans     &trans          &trans     &trans    &trans    &trans
-&kp ESCAPE      &kp Q             &kp W         &kp E   &kp R   &kp T        &tog 0           &kp Y      &kp U           &kp I      &kp O     &kp P     &kp BACKSPACE
-&kp TAB         &kp A             &kp S         &kp D   &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J           &kp K      &kp L     &kp SEMI  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z             &kp X         &kp C   &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA  &kp DOT   &kp FSLH  &kp RIGHT_ALT
-&kp C_MUTE      &kp LEFT_CONTROL  &kp LEFT_WIN  &mo 5   &mo 4   &kp ENTER    &tog 1           &kp SPACE  &kp LEFT_SHIFT  &mo 2      &kp CAPS  &mo 7
+&trans          &trans        &trans        &trans        &trans  &trans       &tog 1           &trans     &trans          &trans    &trans     &trans    &trans
+&kp ESCAPE      &kp Q         &kp W         &kp E         &kp R   &kp T        &tog 0           &kp Y      &kp U           &kp I     &kp O      &kp P     &kp BACKSPACE
+&kp TAB         &kp A         &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J           &kp K     &kp L      &kp SEMI  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA &kp DOT    &kp FSLH  &kp RIGHT_CONTROL
+&kp LEFT_ALT    &kp LEFT_WIN  &kp LEFT_CONTROL &mo 6      &mo 5   &kp ENTER    &tog 1           &kp SPACE  &kp LEFT_SHIFT  &mo 3     &kp CAPS   &mo 2
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // Capa 1: Mac Base (L1 en Vial)
         Mac {
-            label = "HRK";
-            display-name = "HR_K";
+            label = "Main_Mac";
+            display-name = "MAC";
             bindings = <
-&trans          &trans        &trans            &trans  &trans  &trans       &tog 0           &trans     &trans          &trans     &trans    &trans    &trans
-&kp ESCAPE      &kp Q         &kp W             &kp E   &kp R   &kp T        &tog 0           &kp Y      &kp U           &kp I      &kp O     &kp P     &kp BACKSPACE
-&kp TAB         &kp A         &kp S             &kp D   &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J           &kp K      &kp L     &kp SEMI  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z         &kp X             &kp C   &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA  &kp DOT   &kp FSLH  &kp RIGHT_ALT
-&kp C_MUTE      &kp LEFT_WIN  &kp LEFT_CONTROL  &mo 6   &mo 4   &kp ENTER    &tog 0           &kp SPACE  &kp LEFT_SHIFT  &mo 3      &kp CAPS  &mo 7
+&trans          &trans        &trans        &trans        &trans  &trans       &tog 0           &trans     &trans          &trans    &trans     &trans    &trans
+&kp ESCAPE      &kp Q         &kp W         &kp E         &kp R   &kp T        &tog 0           &kp Y      &kp U           &kp I     &kp O      &kp P     &kp BACKSPACE
+&kp TAB         &kp A         &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J           &kp K     &kp L      &kp SEMI  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M           &kp COMMA &kp DOT    &kp FSLH  &kp RIGHT_COMMAND
+&kp LEFT_ALT    &kp LEFT_CONTROL &kp LEFT_WIN &mo 7       &mo 5   &kp ENTER    &tog 0           &kp SPACE  &kp RIGHT_SHIFT &mo 4     &kp CAPS   &mo 2
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
-        OG_LMovement_Windows {
-            bindings = <
-&none   &none           &none           &none           &none            &none     &mmv MOVE_UP     &none    &none      &none          &none           &none              &none
-&trans  &msc SCRL_UP    &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &none     &mmv MOVE_DOWN   &none    &kp PG_UP  &kp PG_DN      &none           &kp DELETE         &trans
-&none   &msc SCRL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none     &mmv MOVE_LEFT   &kp INS  &kp HOME   &kp END        &kp LEFT_SHIFT  &kp RIGHT_CONTROL  &none
-&trans  &kp LC(Z)       &kp LC(X)       &kp LC(C)       &kp LC(V)        &none     &mmv MOVE_RIGHT  &none    &none      &kp RIGHT_ALT  &none           &none              &trans
-&none   &trans          &trans          &none           &none            &trans    &mkp LCLK        &none    &none      &trans         &none           &none
-            >;
-
-            display-name = "LAYER2";
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        OG_LMovement_Mac {
-            display-name = "LAYER2";
-            bindings = <
-&none   &none           &none           &none             &none            &none     &mmv MOVE_UP     &none    &none      &none              &none            &none         &none
-&trans  &msc SCRL_UP    &msc SCRL_LEFT  &kp UP_ARROW      &msc SCRL_RIGHT  &none     &mmv MOVE_DOWN   &none    &kp PG_UP  &kp PG_DN          &none            &kp DELETE    &trans
-&none   &msc SCRL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &none     &mmv MOVE_LEFT   &kp INS  &kp HOME   &kp END            &kp RIGHT_SHIFT  &kp LEFT_ALT  &none
-&trans  &kp LG(Z)       &kp LG(X)       &kp LG(C)         &kp LG(V)        &none     &mmv MOVE_RIGHT  &none    &none      &kp RIGHT_COMMAND  &none            &none         &trans
-&none   &trans          &trans          &kp LEFT_CONTROL  &none            &trans    &mkp LCLK        &none    &none      &trans             &none            &none
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        Signals {
-            bindings = <
-&trans  &trans           &trans  &trans    &trans         &trans         &trans  &trans            &trans                &trans             &trans                 &trans             &trans
-&trans  &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR     &kp PERCENT    &trans  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp EQUAL          &trans
-&trans  &trans           &trans  &trans    &kp PIPE       &kp CARET      &trans  &kp AMPS          &kp LEFT_BRACE        &kp UNDERSCORE     &kp RIGHT_BRACE        &kp PLUS           &kp GRAVE
-&trans  &trans           &trans  &trans    &kp BACKSLASH  &kp TILDE      &trans  &kp LEFT_BRACKET  &kp LESS_THAN         &kp MINUS          &kp GREATER_THAN       &kp RIGHT_BRACKET  &trans
-&trans  &trans           &trans  &trans    &trans         &trans         &trans  &trans            &trans                &trans             &trans                 &trans
-            >;
-        };
-
-        NumberWin {
-            bindings = <
-&none   &none  &none    &none   &none   &none     &none  &none  &none              &none          &none         &none       &none
-&trans  &none  &kp F12  &kp F7  &kp F8  &kp F9    &none  &none  &kp NUMBER_7       &kp NUMBER_8   &kp N9        &none       &trans
-&none   &none  &kp F11  &kp F4  &kp F5  &kp F6    &none  &none  &kp NUMBER_4       &kp NUMBER_5   &kp NUMBER_6  &kp N0      &none
-&none   &none  &kp F10  &kp F1  &kp F2  &kp F3    &none  &none  &kp NUMBER_1       &kp NUMBER_2   &kp NUMBER_3  &kp PERIOD  &none
-&none   &none  &none    &none   &none   &trans    &none  &none  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &none         &none
-            >;
-        };
-
-        NumberMac {
-            bindings = <
-&none   &none  &none    &none   &none   &none     &none  &none         &none             &none              &none         &none       &none
-&trans  &none  &kp F12  &kp F7  &kp F8  &kp F9    &none  &none         &kp NUMBER_7      &kp NUMBER_8       &kp N9        &none       &trans
-&none   &none  &kp F11  &kp F4  &kp F5  &kp F6    &none  &none         &kp NUMBER_4      &kp NUMBER_5       &kp NUMBER_6  &kp N0      &none
-&none   &none  &kp F10  &kp F1  &kp F2  &kp F3    &none  &none         &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3  &kp PERIOD  &none
-&none   &none  &none    &none   &none   &trans    &none  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp RIGHT_CONTROL  &none         &none
-            >;
-        };
-
+        // Capa 2: Configuración del Sistema y Bluetooth (L2 en Vial)
         HR_LConfig {
-            display-name = "LAYER1";
+            display-name = "CONFIG";
             bindings = <
-&none           &none            &none           &none            &none            &none           &mmv MOVE_UP     &none  &none  &none  &none  &none   &none
-&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &mmv MOVE_DOWN   &none  &none  &none  &none  &none   &none
-&none           &none            &none           &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &none           &mmv MOVE_LEFT   &none  &none  &none  &none  &none   &none
-&none           &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none           &mmv MOVE_RIGHT  &none  &none  &none  &none  &none   &none
-&trans          &none            &none           &none            &none            &none           &mkp LCLK        &none  &none  &none  &none  &trans
+&none           &none            &none            &none            &none            &none            &mmv MOVE_UP     &none  &none  &none  &none  &none   &none
+&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &mmv MOVE_DOWN   &none  &none  &none  &none  &none   &none
+&none           &none            &none            &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &none            &mmv MOVE_LEFT   &none  &none  &none  &none  &none   &none
+&none           &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none            &mmv MOVE_RIGHT  &none  &none  &none  &none  &none   &none
+&trans          &none            &none            &none            &none            &none            &mkp LCLK        &to 0  &to 1  &none  &trans &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
-        layer_8 {
+        // Capa 3: Navegación Windows (L3 en Vial)
+        OG_LMovement_Windows {
+            display-name = "NAV_WIN";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&none   &none           &none           &none           &none            &none            &mmv MOVE_UP     &none            &none     &none      &none          &none              &none
+&trans  &msc SCRL_UP    &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &none            &mmv MOVE_DOWN   &none            &kp PG_UP &kp PG_DN  &none          &kp DELETE         &trans
+&none   &msc SCRL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none            &mmv MOVE_LEFT   &kp INS          &kp HOME  &kp END    &kp RIGHT_SHIFT &kp RIGHT_CONTROL &none
+&trans  &kp LC(Z)       &kp LC(X)       &kp LC(C)       &kp LC(V)        &none            &mmv MOVE_RIGHT  &none            &kp RIGHT_ALT &none  &none          &none              &trans
+&trans  &trans          &trans          &none           &none            &trans           &mkp LCLK        &none            &none     &trans     &none          &none
             >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Capa 4: Navegación Mac (L4 en Vial)
+        OG_LMovement_Mac {
+            display-name = "NAV_MAC";
+            bindings = <
+&none   &none           &none           &none           &none            &none            &mmv MOVE_UP     &none            &none     &none      &none          &none              &none
+&trans  &msc SCRL_UP    &msc SCRL_LEFT  &kp UP_ARROW    &msc SCRL_RIGHT  &none            &mmv MOVE_DOWN   &none            &kp PG_UP &kp PG_DN  &none          &kp DELETE         &trans
+&none   &msc SCRL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none            &mmv MOVE_LEFT   &kp INS          &kp HOME  &kp END    &kp RIGHT_SHIFT &kp LEFT_ALT      &none
+&trans  &kp LG(Z)       &kp LG(X)       &kp LG(C)       &kp LG(V)        &none            &mmv MOVE_RIGHT  &none            &kp RIGHT_COMMAND &none &none        &none              &trans
+&trans  &trans          &trans          &none           &none            &trans           &mkp LCLK        &none            &none     &trans     &none          &none
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Capa 5: Símbolos (L5 en Vial)
+        Signals {
+            display-name = "SYM";
+            bindings = <
+&trans  &trans           &trans           &trans        &trans            &trans         &trans           &trans            &trans         &trans            &trans            &trans             &trans
+&none   &kp EXCLAMATION  &kp AT           &kp HASH      &kp DOLLAR        &kp PERCENT    &trans           &kp ASTERISK      &kp LEFT_PARENTHESIS &kp DOUBLE_QUOTES &kp RIGHT_PARENTHESIS &kp EQUAL &none
+&none   &none            &none            &none         &kp PIPE          &kp CARET      &trans           &kp AMPS          &kp LEFT_BRACE &kp UNDERSCORE    &kp RIGHT_BRACE   &kp PLUS           &kp GRAVE
+&none   &none            &none            &none         &kp BACKSLASH     &kp TILDE      &trans           &kp LEFT_BRACKET  &kp LESS_THAN  &kp MINUS         &kp GREATER_THAN  &kp RIGHT_BRACKET  &none
+&none   &none            &none            &none         &trans            &none          &trans           &none             &none          &none             &none             &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Capa 6: Números y Funciones Windows (L6 en Vial)
+        NumberWin {
+            display-name = "NUM_WIN";
+            bindings = <
+&none   &none  &none    &none   &none   &none     &none            &none         &none             &none             &none         &none      &none
+&trans  &none  &kp F12  &kp F7  &kp F8  &kp F9    &none            &none         &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9  &none      &kp BACKSPACE
+&trans  &none  &kp F11  &kp F4  &kp F5  &kp F6    &none            &none         &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6  &kp N0     &none
+&none   &none  &kp F10  &kp F1  &kp F2  &kp F3    &none            &none         &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp KP_DOT &none
+&none   &none  &none    &trans  &none   &none     &none            &none         &kp RIGHT_CONTROL &kp RIGHT_ALT     &none         &none
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Capa 7: Números y Funciones Mac (L7 en Vial)
+        NumberMac {
+            display-name = "NUM_MAC";
+            bindings = <
+&none   &none  &none    &none   &none   &none     &none            &none         &none             &none             &none         &none      &none
+&trans  &none  &kp F12  &kp F7  &kp F8  &kp F9    &none            &none         &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9  &none      &kp BACKSPACE
+&trans  &none  &kp F11  &kp F4  &kp F5  &kp F6    &none            &none         &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6  &kp N0     &none
+&none   &none  &kp F10  &kp F1  &kp F2  &kp F3    &none            &none         &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp KP_DOT &none
+&none   &none  &none    &trans  &none   &none     &none            &kp RIGHT_ALT &kp RIGHT_COMMAND &kp RIGHT_CONTROL &none         &none
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
